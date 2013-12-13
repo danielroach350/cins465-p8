@@ -1,0 +1,119 @@
+
+<body>
+<!-- Header and Nav -->
+    <div class="large-12 columns">
+      <div class="panel">
+        <h1>Daniel's Fish</h1>
+      </div>
+    </div>
+ <!-- Main Page Content and Sidebar -->
+ 
+  <div class="row">
+ 
+    <!-- Main Blog Content -->
+      <hr />
+ 
+      <article>
+ 
+        <h2><a href="#">Fish <%= @fish.id %></a></h2>
+        <h3>Fish Information</h3>
+ 
+        <div class="row">
+          <div class="large-6 columns">
+						<ul class="circle">
+  						<li><h5>Type of Fish Caught: <%= @fish.fish_type %></h5></li>
+  						<li><b>Length Of Fish: <%= @fish.fish_length %> inches</b></li>
+  						<li><b>Weight Of Fish: <%= @fish.fish_weight %> lbs</b></li>
+  						<li><b>Fish Was Caught On: <%= @fish.caught_on %></b></li>
+						</ul>
+							<div>
+  							<h4 class="panel callout radius"><a><li id="weatherData">Weather Data</li></a></h4>
+    						<ul class="circle">
+									<div style="display: none" id="weatherPanel">
+      						<li><strong>Current Time: <%= @fishWeather.currentTime  %></strong> </li>
+     						 	<li><strong>Moon percentage: <%= @fishWeather.moonPercentage %></strong></li>
+      						<li><strong>Location Of Catch: <%= @fishWeather.location %></strong></li>
+									<li><strong>Zip Code: <%= @fishWeather.zipCode %></strong></li>
+									<li><strong>Elevation: <%= @fishWeather.elevation %></strong></li>
+									<li><strong>Observation Location: <%= @fishWeather.observationLocation %></strong></li>
+									<li><strong>Observation Location Elevation: <%= @fishWeather.observationLocationElevation %></strong></li>
+									<li><strong>Observation Time: <%= @fishWeather.observationTime %></strong></li>
+									<li><strong>Current Weather: <%= @fishWeather.currentWeather %></strong></li>
+									<li><strong>Temperature: <%= @fishWeather.temperature %></strong></li>
+									<li><strong>Relative Humidity: <%= @fishWeather.relative_humidity %></strong></li>
+									<li><strong>Wind Information: <%= @fishWeather.windInformation %></strong></li>
+									<li><strong>Precipitation That Day: <%= @fishWeather.precipToday %></strong></li>
+									</div>
+    						</ul>
+						</div>
+          </div>
+          <div class="large-6 columns">
+						<%=image_tag("/assets/#{@fish.fish_photo}", :alt => "Fish Caught")%>
+          </div>
+        </div>
+ 
+      </article>
+
+ 
+    </div>
+ 
+    <!-- End Main Content -->
+    <!-- comments start here -->
+	<div class="row">
+		<hr />
+ 		<h3><div class="panel callout radius"><li id="commentsTab">Comments And Notes</li></h3>
+					<div>
+					
+					</div>
+      			<div class="row">
+							<div>
+								<ul>
+									<%= @notes.each do |note| %>
+										<% if !note.comment.nil? %>
+										<li>Comment: <%= note.comment %> </li>
+										<% end %>
+										<% if !note.note.nil? %>
+										<li>Note: <%= note.note %> </li>
+										<% end %>
+									<% end %>
+								</ul>
+							</div>
+        			<div class="small-3 columns">
+								<%= form_for(@note) do |f| %>
+  								<div class="field">
+    								<%= f.label :comment %><br>
+    								<%= f.text_field :comment %>
+  								</div>
+  								<div class="field">
+    								<%= f.label :note %><br>
+    								<%= f.text_area :note %>
+  								</div>
+    								<%= f.hidden_field :fish_id %>
+  								<div class="actions">
+    								<%= f.submit %>
+  								</div>
+								<% end %>
+							</div>
+						</div>
+					</div>
+	</div>
+ 
+  <!-- End Main Content and Sidebar -->
+ </body>
+  <!-- Footer -->
+ 
+  <footer class="row">
+    <div class="large-12 columns">
+      <hr />
+      <div class="row">
+        <div class="large-6 columns">
+          <p>© Built By Daniel Roach</p>
+        </div>
+        <div class="large-6 columns">
+          <ul class="inline-list right">
+						<li><%= link_to 'Back To Dashboard', root_path %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>

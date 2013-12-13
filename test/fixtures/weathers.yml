@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  weather_info: MyString
+  fish_id: 1
+  currentTime: MyString
+  moonPercentage: 1.5
+  location: MyString
+  zipCode: MyString
+  elevation: 1.5
+  observationLocation: MyString
+  observationLocationElevation: MyString
+  observationTime: MyString
+  currentWeather: MyString
+  temperature: MyString
+  relative_humidity: MyString
+  windInformation: MyString
+  precipToday: MyString
+
+two:
+  weather_info: MyString
+  fish_id: 1
+  currentTime: MyString
+  moonPercentage: 1.5
+  location: MyString
+  zipCode: MyString
+  elevation: 1.5
+  observationLocation: MyString
+  observationLocationElevation: MyString
+  observationTime: MyString
+  currentWeather: MyString
+  temperature: MyString
+  relative_humidity: MyString
+  windInformation: MyString
+  precipToday: MyString

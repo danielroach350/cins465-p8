@@ -1,0 +1,42 @@
+<div class="row">
+<!-- Header and Nav -->
+    <div class="large-12 columns">
+      <div class="panel">
+        <h1>Profile</h1>
+      </div>
+    </div>
+ <!-- Main Page Content and Sidebar -->
+	<div class="large-12 columns"> 
+    	<!-- Thumbnails -->
+				<div class="large-3 small-6 columns">
+					<% if @user.photo.nil? %>
+						<div>
+   	 					<img src="http://placehold.it/250x250&text=Thumbnail" />
+    	 				<h6 class="panel">Description</h6>
+						</div>
+					<% else %>
+						<div>
+        			<img src="/assets/<%=@user.photo %>"/>
+    	 				<h6 class="panel"><%= @user.email %></h6>
+						</div>
+					<% end %>
+					<%= form_tag({action: :upload}, multipart: true) do %>
+					<div>
+						<%= label_tag(:first_name, "First Name:") %>
+  					<%= text_field_tag(:first_name) %>
+					</div>
+					<div>
+						<%= label_tag(:last_name, "First Name:") %>
+  					<%= text_field_tag(:last_name) %>
+					</div>
+					<div>
+						<%= file_field_tag 'Photo' %>
+ 					</div>
+					<div>
+ 						<%= submit_tag("upload") %>
+					</div>
+					<% end %>
+		<%= link_to 'Back To Dashboard', root_path %>
+				</div>
+	</div>
+</div>

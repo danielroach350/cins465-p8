@@ -1,0 +1,1 @@
+json.extract! @weather, :id, :weather_info, :fish_id, :currentTime, :moonPercentage, :location, :zipCode, :elevation, :observationLocation, :observationLocationElevation, :observationTime, :currentWeather, :temperature, :relative_humidity, :windInformation, :precipToday, :created_at, :updated_at

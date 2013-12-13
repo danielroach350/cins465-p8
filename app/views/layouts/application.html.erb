@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+  <head>
+  	<meta charset="utf-8" />
+
+  	<!-- Uncomment to make IE8 render like IE7 -->
+  	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
+
+  	<!-- Set the viewport width to device width for mobile -->
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  	<title><%= content_for?(:title) ? yield(:title) : "Fishing Site" %></title>
+
+  	<%= stylesheet_link_tag    "application" %>
+  	<%= javascript_include_tag "vendor/custom.modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <style>
+body
+{
+ background-image: url(<%= asset_path 'light-wooden.jpg' %>) 
+}
+
+	</style>
+
+  <body>
+		<div class="my-wrapper">
+			<% if !(user_signed_in?) %>
+ 				<div data-alert class="alert-box alert round">
+					<%= alert %>	
+					<a href class="close">x</a>
+				</div>
+			<% elsif user_signed_in? && notice != "" %>
+				<%puts "notice" %>
+				<%puts notice %>
+				<div data-alert class="alert-box success round">
+					<a href class="close">x</a>
+					<%= notice %>
+				</div>
+			<% end %>
+			<div class="right">
+			<% if user_signed_in? %>
+				<h4 id=signIn>
+					Signed in as <%= current_user.email %>. Not you?
+				<%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+				</h4>
+			<% else %>
+				<%= link_to "Sign up", new_user_registration_path %> or
+				<%= link_to "Sign in", new_user_session_path %>
+			<% end %>
+			</div>
+
+
+
+
+    <%= javascript_include_tag "application" %>
+    <%= yield %>
+
+    
+  </body>
+</html>

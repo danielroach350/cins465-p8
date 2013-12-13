@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Weather info:</strong>
+  <%= @weather.weather_info %>
+</p>
+
+<p>
+  <strong>Fish:</strong>
+  <%= @weather.fish_id %>
+</p>
+
+<p>
+  <strong>Currenttime:</strong>
+  <%= @weather.currentTime %>
+</p>
+
+<p>
+  <strong>Moonpercentage:</strong>
+  <%= @weather.moonPercentage %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @weather.location %>
+</p>
+
+<p>
+  <strong>Zipcode:</strong>
+  <%= @weather.zipCode %>
+</p>
+
+<p>
+  <strong>Elevation:</strong>
+  <%= @weather.elevation %>
+</p>
+
+<p>
+  <strong>Observationlocation:</strong>
+  <%= @weather.observationLocation %>
+</p>
+
+<p>
+  <strong>Observationlocationelevation:</strong>
+  <%= @weather.observationLocationElevation %>
+</p>
+
+<p>
+  <strong>Observationtime:</strong>
+  <%= @weather.observationTime %>
+</p>
+
+<p>
+  <strong>Currentweather:</strong>
+  <%= @weather.currentWeather %>
+</p>
+
+<p>
+  <strong>Temperature:</strong>
+  <%= @weather.temperature %>
+</p>
+
+<p>
+  <strong>Relative humidity:</strong>
+  <%= @weather.relative_humidity %>
+</p>
+
+<p>
+  <strong>Windinformation:</strong>
+  <%= @weather.windInformation %>
+</p>
+
+<p>
+  <strong>Preciptoday:</strong>
+  <%= @weather.precipToday %>
+</p>
+
+<%= link_to 'Edit', edit_weather_path(@weather) %> |
+<%= link_to 'Back', weathers_path %>

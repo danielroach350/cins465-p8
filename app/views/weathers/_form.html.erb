@@ -1,0 +1,77 @@
+<%= form_for(@weather) do |f| %>
+  <% if @weather.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@weather.errors.count, "error") %> prohibited this weather from being saved:</h2>
+
+      <ul>
+      <% @weather.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :weather_info %><br>
+    <%= f.text_field :weather_info %>
+  </div>
+  <div class="field">
+    <%= f.label :fish_id %><br>
+    <%= f.number_field :fish_id %>
+  </div>
+  <div class="field">
+    <%= f.label :currentTime %><br>
+    <%= f.text_field :currentTime %>
+  </div>
+  <div class="field">
+    <%= f.label :moonPercentage %><br>
+    <%= f.text_field :moonPercentage %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br>
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :zipCode %><br>
+    <%= f.text_field :zipCode %>
+  </div>
+  <div class="field">
+    <%= f.label :elevation %><br>
+    <%= f.text_field :elevation %>
+  </div>
+  <div class="field">
+    <%= f.label :observationLocation %><br>
+    <%= f.text_field :observationLocation %>
+  </div>
+  <div class="field">
+    <%= f.label :observationLocationElevation %><br>
+    <%= f.text_field :observationLocationElevation %>
+  </div>
+  <div class="field">
+    <%= f.label :observationTime %><br>
+    <%= f.text_field :observationTime %>
+  </div>
+  <div class="field">
+    <%= f.label :currentWeather %><br>
+    <%= f.text_field :currentWeather %>
+  </div>
+  <div class="field">
+    <%= f.label :temperature %><br>
+    <%= f.text_field :temperature %>
+  </div>
+  <div class="field">
+    <%= f.label :relative_humidity %><br>
+    <%= f.text_field :relative_humidity %>
+  </div>
+  <div class="field">
+    <%= f.label :windInformation %><br>
+    <%= f.text_field :windInformation %>
+  </div>
+  <div class="field">
+    <%= f.label :precipToday %><br>
+    <%= f.text_field :precipToday %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

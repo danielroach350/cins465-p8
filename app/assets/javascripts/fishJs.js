@@ -1,0 +1,11 @@
+$(document).ready(function(){
+  $("#show").click(function(){
+		$("#fish").slideDown("slow");
+	});
+	$("#hidefish").click(function(){
+		$("#fish").slideUp("slow");
+	});
+	 $("#weatherData").click(function(){
+    $("#weatherPanel").slideToggle("slow");
+  });
+});

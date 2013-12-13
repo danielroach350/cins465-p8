@@ -1,0 +1,55 @@
+<h1>Listing weathers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Weather info</th>
+      <th>Fish</th>
+      <th>Currenttime</th>
+      <th>Moonpercentage</th>
+      <th>Location</th>
+      <th>Zipcode</th>
+      <th>Elevation</th>
+      <th>Observationlocation</th>
+      <th>Observationlocationelevation</th>
+      <th>Observationtime</th>
+      <th>Currentweather</th>
+      <th>Temperature</th>
+      <th>Relative humidity</th>
+      <th>Windinformation</th>
+      <th>Preciptoday</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @weathers.each do |weather| %>
+      <tr>
+        <td><%= weather.weather_info %></td>
+        <td><%= weather.fish_id %></td>
+        <td><%= weather.currentTime %></td>
+        <td><%= weather.moonPercentage %></td>
+        <td><%= weather.location %></td>
+        <td><%= weather.zipCode %></td>
+        <td><%= weather.elevation %></td>
+        <td><%= weather.observationLocation %></td>
+        <td><%= weather.observationLocationElevation %></td>
+        <td><%= weather.observationTime %></td>
+        <td><%= weather.currentWeather %></td>
+        <td><%= weather.temperature %></td>
+        <td><%= weather.relative_humidity %></td>
+        <td><%= weather.windInformation %></td>
+        <td><%= weather.precipToday %></td>
+        <td><%= link_to 'Show', weather %></td>
+        <td><%= link_to 'Edit', edit_weather_path(weather) %></td>
+        <td><%= link_to 'Destroy', weather, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Weather', new_weather_path %>

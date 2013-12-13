@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fish_type: MyString
+  fish_length: 1.5
+  fish_weight: 1.5
+  caught_on: MyString
+  longitude: 1.5
+  latitude: MyString
+
+two:
+  fish_type: MyString
+  fish_length: 1.5
+  fish_weight: 1.5
+  caught_on: MyString
+  longitude: 1.5
+  latitude: MyString
